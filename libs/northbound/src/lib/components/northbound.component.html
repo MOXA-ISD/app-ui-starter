@@ -1,0 +1,16 @@
+<div style="width:50%; margin: auto;">
+  <tp-window name="Azure" windowId="tpAzure" maxStateNumber="3">
+    <tp-window-state name="Azure" type="CONTENT" stateId="azure">
+      <div style="display: flex;">
+        <form style="width: 100%;" [formGroup]="form" (ngSubmit)="submit(model)">
+          <formly-form [form]="form" [fields]="fields" [model]="model">
+            <div style="display: flex; justify-content: flex-end;">
+              <button mat-raised-button color="primary" [disabled]="form.invalid" type="submit">Submit</button>
+            </div>
+          </formly-form>
+        </form>
+      </div>
+    </tp-window-state>
+    <tp-window-state stateId="refresh" name="Refresh" type="ACTION" icon="refresh"></tp-window-state>
+  </tp-window>
+</div>
