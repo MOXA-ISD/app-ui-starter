@@ -20,11 +20,14 @@
       "dom"
     ],
     "paths": {
-      "playground/*": [
+      "app": [
         "libs/*"
       ],
-      "@tp-ui/northbound": [
-        "libs/northbound/src/index.ts"
+      "custom/*": [
+        "libs/custom/src/lib/*"
+      ],
+      "custom": [
+        "libs/custom/src/index.ts"
       ]
     }
   }

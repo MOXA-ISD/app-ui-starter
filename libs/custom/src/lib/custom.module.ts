@@ -6,11 +6,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { MatButtonModule } from '@angular/material/button';
-import { reducer } from './store/northbound.reducer';
-import { TpNorthboundEffects } from './store/northbound.effects';
+import { reducer } from './store/custom.reducer';
+import { TpCustomEffects } from './store/custom.effects';
 import { TpWindowModule } from '@tp-ui/tp-window';
 import { FormlyMaterialModule } from '@ngx-formly/material';
-import { TpNorthboundComponent } from './components/northbound.component';
+import { TpCustomComponent } from './components/custom.component';
 
 @NgModule({
   imports: [
@@ -20,12 +20,13 @@ import { TpNorthboundComponent } from './components/northbound.component';
     MatButtonModule,
     FormlyMaterialModule,
     FormlyModule.forChild(),
-    StoreModule.forFeature('northbound', reducer),
-    EffectsModule.forFeature([TpNorthboundEffects]),
+    StoreModule.forFeature('custom', reducer),
+    EffectsModule.forFeature([TpCustomEffects]),
     RouterModule.forChild([
-      {path: '', pathMatch: 'full', component: TpNorthboundComponent}
+      {path: '', component: TpCustomComponent}
     ])
   ],
-  declarations: [TpNorthboundComponent]
+  exports: [ RouterModule ],
+  declarations: [ TpCustomComponent ]
 })
-export class TpNorthboundModule {}
+export class TpCustomModule {}

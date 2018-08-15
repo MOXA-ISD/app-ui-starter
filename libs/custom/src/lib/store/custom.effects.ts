@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TpNorthboundService } from '../northbound.service';
+import { TpCustomService } from '../custom.service';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
@@ -12,13 +12,13 @@ import {
   Update,
   UpdateSuccess,
   UpdateFailed,
-  TpNorthboundActionTypes } from './northbound.actions';
+  TpCustomActionTypes } from './custom.actions';
 
 @Injectable()
-export class TpNorthboundEffects {
+export class TpCustomEffects {
   @Effect()
   load$: Observable<Action> = this.action$.pipe(
-    ofType<Load>(TpNorthboundActionTypes.Load),
+    ofType<Load>(TpCustomActionTypes.Load),
     switchMap(() =>
       this.service.load().pipe(
         map(data => new LoadSuccess(data)),
@@ -29,7 +29,7 @@ export class TpNorthboundEffects {
 
   @Effect()
   update$: Observable<Action> = this.action$.pipe(
-    ofType<Update>(TpNorthboundActionTypes.Update),
+    ofType<Update>(TpCustomActionTypes.Update),
     switchMap(action =>
       this.service.update(action.payload).pipe(
         map(data => {
@@ -47,6 +47,6 @@ export class TpNorthboundEffects {
   constructor(
     private logger: LoggerService,
     private action$: Actions,
-    private service: TpNorthboundService,
+    private service: TpCustomService,
   ) {}
 }

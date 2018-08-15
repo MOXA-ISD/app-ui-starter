@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { TpNorthboundModule } from '@tp-ui/northbound';
+import { TpCustomModule } from 'custom';
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { TpCoreModule } from '@tp-ui/tp-core';
@@ -16,8 +16,8 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule.forRoot(),
     TpCoreModule.forRoot(),
     AppRoutingModule,
-    NxModule.forRoot(),
-    TpNorthboundModule],
+    NxModule.forRoot()
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

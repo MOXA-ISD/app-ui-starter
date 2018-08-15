@@ -4,8 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'dns',
-    loadChildren: '@tp-ui/northbound#TpNorthboundModule'
+    path: '',
+    redirectTo: 'custom',
+    pathMatch: 'full'
+  },
+  {
+    path: 'custom',
+    loadChildren: 'custom#TpCustomModule'
   }
 ];
 

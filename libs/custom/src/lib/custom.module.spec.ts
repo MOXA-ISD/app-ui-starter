@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { NorthboundModule } from './northbound.module';
+import { TpCustomModule } from './custom.module';
 
 describe('NorthboundModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NorthboundModule]
+      imports: [TpCustomModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(NorthboundModule).toBeDefined();
+    expect(TpCustomModule).toBeDefined();
   });
 });

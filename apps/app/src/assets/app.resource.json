@@ -1,0 +1,42 @@
+{
+  "fields": [{
+      "key": "connection_string",
+      "type": "input",
+      "templateOptions": {
+        "placeholder": "Device Connection String"
+      }
+    },
+    {
+      "key": "transport_protocol",
+      "type": "select",
+      "templateOptions": {
+        "label": "Transport Protocol",
+        "placeholder": "Transport Protocol",
+        "options": [{
+            "value": "MQTT",
+            "label": "MQTT"
+          },
+          {
+            "value": "AMQP",
+            "label": "AMQP"
+          },
+          {
+            "value": "HTTP",
+            "label": "HTTP"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tags",
+      "type": "tagSelector"
+    },
+    {
+      "key": "event",
+      "type": "float",
+      "templateOptions": {
+        "label": "Event Update Interval"
+      }
+    }
+  ]
+}

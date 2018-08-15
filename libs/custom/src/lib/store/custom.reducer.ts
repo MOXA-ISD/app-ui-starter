@@ -1,34 +1,34 @@
-import { TpNorthboundActions, TpNorthboundActionTypes } from './northbound.actions';
+import { TpCustomActions, TpCustomActionTypes } from './custom.actions';
 
-export interface NorthboundState {
+export interface CustomState {
   data: any;
   loaded: boolean;
   loading: boolean;
 }
 
-const initialState: NorthboundState = {
+const initialState: CustomState = {
   data: {},
   loaded: false,
   loading: false
 };
 
-export function reducer(state = initialState, action: TpNorthboundActions): NorthboundState {
+export function reducer(state = initialState, action: TpCustomActions): CustomState {
   switch (action.type) {
-    case TpNorthboundActionTypes.Load: {
+    case TpCustomActionTypes.Load: {
       return {
         ...state,
         loading: true
       };
     }
 
-    case TpNorthboundActionTypes.LoadFailed: {
+    case TpCustomActionTypes.LoadFailed: {
       return {
         ...state,
         loading: false
       };
     }
 
-    case TpNorthboundActionTypes.LoadSuccess: {
+    case TpCustomActionTypes.LoadSuccess: {
       return {
         ...state,
         data: action.payload,
@@ -37,7 +37,7 @@ export function reducer(state = initialState, action: TpNorthboundActions): Nort
       };
     }
 
-    case TpNorthboundActionTypes.UpdateSuccess: {
+    case TpCustomActionTypes.UpdateSuccess: {
       return {
         ...state,
         data: action.payload
